@@ -39,18 +39,43 @@ const teamMembers = [
 
 let teamContainer = document.getElementById("team-container");
 
-for (i = 0; i < teamMembers.length; i++) {
-  teamContainer.innerHTML += `                
-    <div class="bg-dark text-white p-0" style="flex-basis: calc(100% / 3 - (20px * 2 / 3));">
-      <div class="d-flex" style="height: 90px;">
-        <figure class="h-100 m-0">
-          <img class="h-100" src=${teamMembers[i].img} alt=${teamMembers[i].name}>
-        </figure>
-        <div class="py-2 ps-2">
-            <h5 class="m-0 fw-bold">${teamMembers[i].name}</h5>
-            <div>Designer</div>
-            <a href="/">${teamMembers[i].email}</a>
+function addTeamMember() {
+  for (i = 0; i < teamMembers.length; i++) {
+    teamContainer.innerHTML += `                
+      <div class="bg-dark text-white p-0" style="flex-basis: calc(100% / 3 - (20px * 2 / 3));">
+        <div class="d-flex" style="height: 90px;">
+          <figure class="h-100 m-0">
+            <img class="h-100" src=${teamMembers[i].img} alt=${teamMembers[i].name}>
+          </figure>
+          <div class="py-2 ps-2">
+              <h5 class="m-0 fw-bold">${teamMembers[i].name}</h5>
+              <div>Designer</div>
+              <a href="/">${teamMembers[i].email}</a>
+          </div>
         </div>
-      </div>
-    </div>`
+      </div>`
+  }
 }
+
+addTeamMember()
+
+let btn = document.querySelector(".btn");
+
+btn.addEventListener("click", function(event) {
+  event.preventDefault();
+  let name = document.getElementById("name").value;
+  let role = document.getElementById("role").value;
+  let email = document.getElementById("email").value;
+  let img = document.getElementById("image").value;
+
+  teamMembers.push({
+    name,
+    role,
+    email,
+    img
+  })
+
+  teamContainer.innerHTML = "";
+
+  addTeamMember()
+})
