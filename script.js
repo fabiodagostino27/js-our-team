@@ -49,7 +49,7 @@ function addTeamMember() {
           </figure>
           <div class="py-2 ps-2">
               <h5 class="m-0 fw-bold">${teamMembers[i].name}</h5>
-              <div>Designer</div>
+              <div>${teamMembers[i].role}</div>
               <a href="/">${teamMembers[i].email}</a>
           </div>
         </div>
