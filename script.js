@@ -42,7 +42,7 @@ let teamContainer = document.getElementById("team-container");
 function addTeamMember() {
   for (i = 0; i < teamMembers.length; i++) {
     teamContainer.innerHTML += `                
-      <div class="bg-dark text-white p-0" style="flex-basis: calc(100% / 3 - (20px * 2 / 3));">
+      <div class="bg-dark text-white p-0 col-3 element">
         <div class="d-flex" style="height: 90px;">
           <figure class="h-100 m-0">
             <img class="h-100" src=${teamMembers[i].img} alt=${teamMembers[i].name}>

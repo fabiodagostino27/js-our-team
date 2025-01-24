@@ -1,0 +1,19 @@
+.element {
+    flex-basis: 100%;
+}
+
+#team-container {
+    gap: 20px;
+}
+
+@media screen and (min-width: 770px) {
+    .element {
+        flex-basis: calc(100% / 2 - (20px * 1 / 2));
+    }
+}
+
+@media screen and (min-width: 1000px) {    
+    .element {
+        flex-basis: calc(100% / 3 - (20px * 2 / 3));
+    }
+}
